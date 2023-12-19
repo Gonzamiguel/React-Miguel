@@ -1,6 +1,7 @@
 import logo from '/src/assets/logo/adidas.webp'
 import Navlink from './Navlink'
 import { FaCartArrowDown } from "react-icons/fa"
+import NavLinkConImagen from './NavLinkConImagen';
 
 
 
@@ -8,13 +9,13 @@ export const Nav = () => {
     return (
         <nav className="sticky flex justify-between items-center p-4 bg-slate-100"> 
             <div className="flex items-center">
-                <img className="w-10 h-10" src={logo} alt="Logo Adidas"/>
+                <NavLinkConImagen to={"/"} imageSrc={logo} imageAlt="Logo Adidas" />
             </div>
             <div className="flex items-center">
                 <ul className="flex gap-8 font-mono font-black tracking-wider">
-                    <li><Navlink href={"#"} text={"Hombre"}/></li>
-                    <li><Navlink href={"#"} text={"Mujer"}/></li>
-                    <li><Navlink href={"#"} text={"Niños"}/></li>
+                    <li><Navlink href={"/hombre"} text={"Hombre"}/></li>
+                    <li><Navlink href={"/mujer"} text={"Mujer"}/></li>
+                    <li><Navlink href={"/chicos"} text={"Chicos"}/></li>
                 </ul>
             </div>
             <div className="flex items-center font-mono font-black tracking-wider">
