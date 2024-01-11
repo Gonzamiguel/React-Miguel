@@ -6,7 +6,7 @@ import logo from '/src/assets/logo/adidas.webp';
 const NavLinkConImagen = ({href,text}) => {
 
         return (
-            <Link to={href}>
+            <Link to="/">
                 <img className="w-10 h-10" src={logo} alt="Logo Adidas"/>
             </Link>
         )

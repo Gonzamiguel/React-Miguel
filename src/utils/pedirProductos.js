@@ -1,10 +1,10 @@
-import  Productos  from "../mock/data";
+
 
 export const pedirProductos = () => {
     return new Promise ((resolve, reject) => {
         setTimeout( () => {
             resolve (Productos);
-        }, 500)        
+        }, 0)        
     })
 }
 

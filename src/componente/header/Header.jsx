@@ -1,9 +1,9 @@
-import inicio from '/src/assets/inicio/inicio.webp'
+import cards from '/src/assets/cards/lionel-messi-seleccion.jpg'
 
 export const Header = () => {
     return (
         <div className='pb-5'>
-            <img className="w-full border-8 border-green-800" src={inicio} alt="Imagen inicio"/>
+            <img className="h-screen w-screen object-cover object-top" src={cards} alt="Imagen inicio"/>
         </div>
     )
 }

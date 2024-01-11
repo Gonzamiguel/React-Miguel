@@ -1,29 +1,46 @@
-import logo from '/src/assets/logo/adidas.webp'
-import Navlink from './Navlink'
-import { FaCartArrowDown } from "react-icons/fa"
+
 import NavLinkConImagen from './NavLinkConImagen';
+import { Link } from 'react-router-dom'
+import CartWidget from './CartWidget';
 
+export const Nav = () => { 
 
+const links = [ 
+    {
+        label: "Hombre",
+        href: "/productos/Hombre"
+    },
+    {
+        label: "Mujer",
+        href: "/productos/Mujer"
+    },
+    {
+        label: "Niños",
+        href: "/productos/Niños"
+    }
+]
 
-export const Nav = () => {
     return (
-        <nav className="sticky flex justify-between items-center p-4 bg-slate-100"> 
+        <nav className="fixed w-full top-0 flex justify-between items-center p-2 bg-blue-400"> 
+            <Link
+                to= "/"
+                >
+                <NavLinkConImagen/>
+            </Link>
             <div className="flex items-center">
-                <NavLinkConImagen to={"/"} imageSrc={logo} imageAlt="Logo Adidas" />
-            </div>
-            <div className="flex items-center">
-                <ul className="flex gap-8 font-mono font-black tracking-wider">
-                    <li><Navlink href={"/hombre"} text={"Hombre"}/></li>
-                    <li><Navlink href={"/mujer"} text={"Mujer"}/></li>
-                    <li><Navlink href={"/chicos"} text={"Chicos"}/></li>
+                <ul className="flex items-center gap-8 font-mono font-black tracking-wider">
+
+                    {links.map((link) =>
+                    <Link
+                    key = {link.href}
+                    to = {link.href}
+                    >
+                    {link.label}
+                    </Link>
+                    )}
                 </ul>
             </div>
-            <div className="flex items-center font-mono font-black tracking-wider">
-                <ul className="flex gap-4">
-                    <li><Navlink href={"#"} text={"Buscador"}/></li>
-                    <li><Navlink href={"#"} text={<FaCartArrowDown className='text-2xl'/>}/></li>
-                </ul>
-            </div>
+            <CartWidget/>
         </nav>
     )
 };
